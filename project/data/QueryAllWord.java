@@ -10,21 +10,23 @@ public class QueryAllWord {
         if(null == con) {
             return null;
         }
+
         Word[] words = null;
         Statement sta;
         ResultSet rs;
         try {
             // 查询所有数据
-            String sqlStr = "SELECT * FROM words_tbl";
+            String sqlStr = "SELECT * FROM word_tbl";
             sta = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             rs = sta.executeQuery(sqlStr);
+            rs.last();
             int recordAmount = rs.getRow();
             // 初始化输出数组
             words = new Word[recordAmount];
             for(int i = 0; i < words.length; i++) {
                 words[i] =  new Word();
             }
-            // 写出输出数组
+            // 写入输出数组
             rs.beforeFirst();
             for(int i = 0; rs.next(); i++) {
                 words[i].setWord(rs.getString(1));

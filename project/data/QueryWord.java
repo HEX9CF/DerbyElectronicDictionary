@@ -10,12 +10,13 @@ import java.sql.*;
  * @date 2023/05/31
  */
 public class QueryWord {
-    public static Word queryWord(Word word) {
+    public Word queryWord(Word word) {
         // 连接数据库
         Connection con = DatabaseConnector.connect();
         if(null == con) {
             return null;
         }
+
         Word foundWord = null;
         PreparedStatement preSta;
         ResultSet rs;
@@ -24,7 +25,7 @@ public class QueryWord {
             String sqlStr = "SELECT * FROM word_tbl WHERE word=?";
             preSta = con.prepareStatement(sqlStr);
             preSta.setString(1, word.getWord());
-            rs = preSta.executeQuery(sqlStr);
+            rs = preSta.executeQuery();
             if(rs.next()) {
                 foundWord = new Word();
                 foundWord.setWord(rs.getString(1));

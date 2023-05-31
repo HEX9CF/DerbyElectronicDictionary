@@ -17,6 +17,20 @@ public class UpdateWord {
         if(null == con) {
             return 0;
         }
+
+        // 获取原单词数据
+        QueryWord queryWord = new QueryWord();
+        Word originalWord = queryWord.queryWord(word);
+        if(null == word.getIpa()) {
+            word.setIpa(originalWord.getIpa());
+        }
+        if(null == word.getMeaning()) {
+            word.setMeaning(originalWord.getMeaning());
+        }
+        if(null == word.getExample()) {
+            word.setExample(originalWord.getExample());
+        }
+
         try {
             // 更新数据
             String sqlStr = "UPDATE word_tbl SET ipa=?,meaning=?,example=? WHERE word=?";

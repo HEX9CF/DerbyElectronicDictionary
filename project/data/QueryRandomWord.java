@@ -70,7 +70,7 @@ public class QueryRandomWord {
         // 生成随机数，使用集合去重
         Set<Integer> set = new HashSet<Integer>();
         Random random = new Random();
-        for (int s = set.size(); s < count; s = set.size()) {
+        for (int s = 0; s < count; s = set.size()) {
             int r = random.nextInt(max) + 1;
             set.add(r);
         }
@@ -78,7 +78,7 @@ public class QueryRandomWord {
         Iterator<Integer> iter = set.iterator();
         for(int i = 0; iter.hasNext(); i++) {
             Integer n = iter.next();
-            randomNumbers[i] = n.intValue();
+            randomNumbers[i] = n;
         }
         return randomNumbers;
     }

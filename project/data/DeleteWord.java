@@ -14,7 +14,7 @@ public class DeleteWord {
     public int deleteWord(Word word) {
         // 连接数据库
         Connection con = DatabaseConnector.connect();
-        if(null == null) {
+        if(null == con) {
             return 0;
         }
         try {

@@ -19,6 +19,7 @@ public class DatabaseConnector {
         try {
             // 连接数据库
             String uri = "jdbc:derby:MyDictionary;create=false";
+            con = DriverManager.getConnection(uri);
         } catch(Exception e) {
             System.out.println(e);
         }

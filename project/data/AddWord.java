@@ -14,19 +14,21 @@ public class AddWord {
     public int addWord(Word word) {
         // 连接数据库
         Connection con = DatabaseConnector.connect();
-        if(null == null) {
+        if(null == con) {
             return 0;
         }
         try {
             // 插入数据
-            String sqlStr = "INSERT INTO word_tbl values(?,?,?,?)";
-            PreparedStatement preSta = con.prepareStatement(sqlStr);
-            preSta.setString(1, word.getWord());
-            preSta.setString(2, word.getIpa());
-            preSta.setString(3, word.getMeaning());
-            preSta.setString(4, word.getExample());
-            isOK = preSta.executeUpdate();
-            con.close();
+            if(null != word.getWord()) {
+                String sqlStr = "INSERT INTO word_tbl values(?,?,?,?)";
+                PreparedStatement preSta = con.prepareStatement(sqlStr);
+                preSta.setString(1, word.getWord());
+                preSta.setString(2, word.getIpa());
+                preSta.setString(3, word.getMeaning());
+                preSta.setString(4, word.getExample());
+                isOK = preSta.executeUpdate();
+                con.close();
+            }
         } catch(SQLException e) {
             isOK = 0;
             System.out.println(e);

@@ -24,13 +24,16 @@ public class DatabaseInitializer {
         } catch(Exception e) {
             System.out.println(e);
         }
+        if(null == con) {
+            return;
+        }
         try {
             // 创建表
             Statement sta = con.createStatement();
             String sqlStr = "CREATE TABLE word_tbl(" +
                     "word VARCHAR(64) PRIMARY KEY," +
-                    "ipa VARCHAR(64)" +
-                    "meaning VARCHAR(256)" +
+                    "ipa VARCHAR(64)," +
+                    "meaning VARCHAR(256)," +
                     "example VARCHAR(512)" +
                     ")";
             sta.executeUpdate(sqlStr);
