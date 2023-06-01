@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * 词汇表处理程序
+ * 词汇表处理器
  *
  * @author HEX9CF
  * @date 2023/06/01
@@ -30,6 +30,9 @@ public class VocabularyHandler implements ActionListener {
         updateTable();
     }
 
+    /**
+     * 查询单词
+     */
     public void queryWord() {
         queryAllWord = new QueryAllWord();
         words = queryAllWord.queryAllWord();
@@ -43,6 +46,9 @@ public class VocabularyHandler implements ActionListener {
         }
     }
 
+    /**
+     * 更新表格
+     */
     public void updateTable() {
         view.getTableModel().setDataVector(tbl, HEADER);
     }

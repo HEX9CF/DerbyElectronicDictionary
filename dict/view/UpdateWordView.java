@@ -13,6 +13,7 @@ public class UpdateWordView {
     private JButton buttonUpdate;
     private JButton buttonQuery;
     private JButton buttonDelete;
+    private JTextField textInput;
     private UpdateWordHandler handler;
     UpdateWordView() {
         setHandler(new UpdateWordHandler());
@@ -23,6 +24,8 @@ public class UpdateWordView {
         handler.setView(this);
     }
     private void regListener() {
+        buttonDelete.addActionListener(handler);
+        buttonQuery.addActionListener(handler);
         buttonUpdate.addActionListener(handler);
     }
 
@@ -56,5 +59,9 @@ public class UpdateWordView {
 
     public JButton getButtonDelete() {
         return buttonDelete;
+    }
+
+    public JTextField getTextInput() {
+        return textInput;
     }
 }

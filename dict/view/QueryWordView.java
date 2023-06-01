@@ -13,10 +13,11 @@ import javax.swing.*;
 public class QueryWordView {
     private JPanel mainPanel;
     private JButton buttonQuery;
-    private JTextField textWord;
+    private JTextField textInput;
     private JTextField textIpa;
     private JTextArea textMeaning;
     private JTextArea textExample;
+    private JTextField textWord;
     private QueryWordHandler handler;
 
     QueryWordView() {
@@ -51,6 +52,10 @@ public class QueryWordView {
 
     public JTextArea getTextMeaning() {
         return textMeaning;
+    }
+
+    public JTextField getTextInput() {
+        return textInput;
     }
 
     public JTextArea getTextExample() {

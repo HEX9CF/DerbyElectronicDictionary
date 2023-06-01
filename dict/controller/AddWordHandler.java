@@ -15,6 +15,9 @@ import java.awt.event.*;
 public class AddWordHandler implements ActionListener {
     AddWordView view;
     public void actionPerformed(ActionEvent ae) {
+        int isOK;
+
+        // 读取输入
         String wordStr = view.getTextWord().getText();
         String ipa = view.getTextIpa().getText();
         String meaning = view.getTextMeaning().getText();
@@ -23,16 +26,19 @@ public class AddWordHandler implements ActionListener {
             JOptionPane.showMessageDialog(null, "添加单词失败，单词和释义不允许为空！", "警告", JOptionPane.WARNING_MESSAGE);
             return;
         }
+
+        // 初始化单词对象
         Word word = new Word();
-        AddWord addWord = new AddWord();
         word.setWord(wordStr);
         word.setIpa(ipa);
         word.setMeaning(meaning);
         word.setExample(example);
-        int isOK;
+
+        // 写入数据库
+        AddWord addWord = new AddWord();
         isOK = addWord.addWord(word);
         if(0 != isOK) {
-            JOptionPane.showMessageDialog(null, "添加单词成功", "提示", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "添加单词成功^_^", "提示", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "添加单词失败，可能添加了重复单词", "警告", JOptionPane.WARNING_MESSAGE);
         }
