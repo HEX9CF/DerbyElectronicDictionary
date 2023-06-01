@@ -1,5 +1,5 @@
-package project.data;
-import project.model.Word;
+package dict.data;
+import dict.model.Word;
 
 import java.sql.*;
 

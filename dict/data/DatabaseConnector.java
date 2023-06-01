@@ -1,4 +1,4 @@
-package project.data;
+package dict.data;
 import java.sql.*;
 
 /**

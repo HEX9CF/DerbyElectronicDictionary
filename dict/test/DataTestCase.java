@@ -1,8 +1,14 @@
-package project.test;
-import project.data.DatabaseInitializer;
-import project.model.Word;
-import project.data.*;
+package dict.test;
+import dict.data.DatabaseInitializer;
+import dict.model.Word;
+import dict.data.*;
 
+/**
+ * 数据测试用例
+ *
+ * @author HEX9CF
+ * @date 2023/05/31
+ */
 public class DataTestCase {
     public static void main(String[] args) {
         new DatabaseInitializer();

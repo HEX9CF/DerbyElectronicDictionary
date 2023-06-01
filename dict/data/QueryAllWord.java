@@ -1,5 +1,5 @@
-package project.data;
-import project.model.Word;
+package dict.data;
+import dict.model.Word;
 
 import java.sql.*;
 
@@ -21,11 +21,13 @@ public class QueryAllWord {
             rs = sta.executeQuery(sqlStr);
             rs.last();
             int recordAmount = rs.getRow();
+
             // 初始化输出数组
             words = new Word[recordAmount];
             for(int i = 0; i < words.length; i++) {
                 words[i] =  new Word();
             }
+
             // 写入输出数组
             rs.beforeFirst();
             for(int i = 0; rs.next(); i++) {

@@ -1,4 +1,4 @@
-package project.data;
+package dict.data;
 import java.sql.*;
 
 /**
@@ -31,10 +31,10 @@ public class DatabaseInitializer {
             // 创建表
             Statement sta = con.createStatement();
             String sqlStr = "CREATE TABLE word_tbl(" +
-                    "word VARCHAR(64) PRIMARY KEY," +
-                    "ipa VARCHAR(64)," +
+                    "word VARCHAR(32) PRIMARY KEY," +
+                    "ipa VARCHAR(32)," +
                     "meaning VARCHAR(256)," +
-                    "example VARCHAR(512)" +
+                    "example VARCHAR(256)" +
                     ")";
             sta.executeUpdate(sqlStr);
             con.close();
