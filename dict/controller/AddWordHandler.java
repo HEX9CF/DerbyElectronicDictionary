@@ -14,6 +14,7 @@ import java.awt.event.*;
  */
 public class AddWordHandler extends Handler{
     AddWordView view;
+    AddWord addWord;
     public void actionPerformed(ActionEvent ae) {
         int isOK;
 
@@ -35,7 +36,7 @@ public class AddWordHandler extends Handler{
         word.setExample(example);
 
         // 写入数据库
-        AddWord addWord = new AddWord();
+        addWord = new AddWord();
         isOK = addWord.add(word);
         if(0 != isOK) {
             JOptionPane.showMessageDialog(null, "添加单词成功^_^", "提示", JOptionPane.INFORMATION_MESSAGE);
