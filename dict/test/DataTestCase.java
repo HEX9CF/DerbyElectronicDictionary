@@ -47,9 +47,9 @@ public class DataTestCase {
         }
         System.out.println();
 
-        QueryRandomWord queryRandomWord = new QueryRandomWord();
-        queryRandomWord.setCount(3);
-        results = queryRandomWord.queryRandomWord();
+        QueryRandomWords queryRandomWords = new QueryRandomWords();
+        queryRandomWords.setCount(3);
+        results = queryRandomWords.queryRandomWords();
         for(int i = 0; i < results.length; i++) {
             System.out.printf("%d %-10s %-10s %-10s %-10s\n", i, results[i].getWord(), results[i].getIpa(), results[i].getMeaning(), results[i].getExample());
         }

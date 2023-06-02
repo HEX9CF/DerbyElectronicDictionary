@@ -8,15 +8,18 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * 查询单词处理器
+ *
+ * @author HEX9CF
+ * @date 2023/06/02
+ */
 public class QueryWordHandler implements ActionListener {
     QueryWordView view;
     QueryWord queryWord;
     public void actionPerformed(ActionEvent ae) {
         // 清空输出
-        view.getTextWord().setText(null);
-        view.getTextIpa().setText(null);
-        view.getTextMeaning().setText(null);
-        view.getTextExample().setText(null);
+        clearOutput();
 
         // 读取输入
         String wordStr = view.getTextInput().getText();
@@ -41,6 +44,18 @@ public class QueryWordHandler implements ActionListener {
         view.getTextMeaning().setText(result.getMeaning());
         view.getTextExample().setText(result.getExample());
     }
+
+
+    /**
+     * 清空输出
+     */
+    private void clearOutput() {
+        view.getTextWord().setText(null);
+        view.getTextIpa().setText(null);
+        view.getTextMeaning().setText(null);
+        view.getTextExample().setText(null);
+    }
+
     public void setView(QueryWordView v) {
         this.view = v;
     }

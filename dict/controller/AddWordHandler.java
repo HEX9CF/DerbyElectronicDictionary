@@ -39,10 +39,22 @@ public class AddWordHandler implements ActionListener {
         isOK = addWord.addWord(word);
         if(0 != isOK) {
             JOptionPane.showMessageDialog(null, "添加单词成功^_^", "提示", JOptionPane.INFORMATION_MESSAGE);
+            clearInput();
         } else {
             JOptionPane.showMessageDialog(null, "添加单词失败，可能添加了重复单词", "警告", JOptionPane.WARNING_MESSAGE);
         }
     }
+
+    /**
+     * 清空输入
+     */
+    private void clearInput() {
+        view.getTextWord().setText(null);
+        view.getTextIpa().setText(null);
+        view.getTextMeaning().setText(null);
+        view.getTextExample().setText(null);
+    }
+
     public void setView(AddWordView v) {
         this.view = v;
     }

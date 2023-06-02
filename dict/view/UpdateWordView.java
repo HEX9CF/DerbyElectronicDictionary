@@ -4,6 +4,12 @@ import dict.controller.UpdateWordHandler;
 
 import javax.swing.*;
 
+/**
+ * 更新单词视图
+ *
+ * @author HEX9CF
+ * @date 2023/06/02
+ */
 public class UpdateWordView {
     private JPanel mainPanel;
     private JTextField textWord;

@@ -14,16 +14,19 @@ public class IntegrationView extends JFrame{
     UpdateWordView updateWordView;
     QueryWordView queryWordView;
     VocabularyView vocabularyView;
+    RandomWordView randomWordView;
     public IntegrationView() {
         tabbedPane = new JTabbedPane(JTabbedPane.TOP);
         addWordView = new AddWordView();
         updateWordView = new UpdateWordView();
         queryWordView = new QueryWordView();
         vocabularyView = new VocabularyView();
+        randomWordView = new RandomWordView();
         tabbedPane.add("查询单词", queryWordView.getMainPanel());
+        tabbedPane.add("词汇表", vocabularyView.getMainPanel());
+        tabbedPane.add("随机单词", randomWordView.getMainPanel());
         tabbedPane.add("添加单词", addWordView.getMainPanel());
         tabbedPane.add("修改单词", updateWordView.getMainPanel());
-        tabbedPane.add("词汇表", vocabularyView.getMainPanel());
         tabbedPane.validate();
         add(tabbedPane, BorderLayout.CENTER);
         validate();

@@ -10,6 +10,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * 更新单词处理器
+ *
+ * @author HEX9CF
+ * @date 2023/06/02
+ */
 public class UpdateWordHandler implements ActionListener {
     UpdateWordView view;
     QueryWord queryWord;

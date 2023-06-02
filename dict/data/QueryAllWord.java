@@ -3,6 +3,12 @@ import dict.model.Word;
 
 import java.sql.*;
 
+/**
+ * 查询所有单词
+ *
+ * @author HEX9CF
+ * @date 2023/06/02
+ */
 public class QueryAllWord {
     public Word[] queryAllWord() {
         // 连接数据库
