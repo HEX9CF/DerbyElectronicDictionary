@@ -12,7 +12,7 @@ import java.awt.event.*;
  * @author HEX9CF
  * @date 2023/06/01
  */
-public class AddWordHandler implements ActionListener {
+public class AddWordHandler extends Handler{
     AddWordView view;
     public void actionPerformed(ActionEvent ae) {
         int isOK;
@@ -36,7 +36,7 @@ public class AddWordHandler implements ActionListener {
 
         // 写入数据库
         AddWord addWord = new AddWord();
-        isOK = addWord.addWord(word);
+        isOK = addWord.add(word);
         if(0 != isOK) {
             JOptionPane.showMessageDialog(null, "添加单词成功^_^", "提示", JOptionPane.INFORMATION_MESSAGE);
             clearInput();

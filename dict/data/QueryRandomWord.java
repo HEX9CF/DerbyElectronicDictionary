@@ -15,7 +15,7 @@ import java.util.Random;
  * @date 2023/06/02
  */
 public class QueryRandomWord {
-    public Word queryRandomWord() {
+    public Word query() {
         // 连接数据库
         Connection con = DatabaseConnector.connect();
         if(null == con) {

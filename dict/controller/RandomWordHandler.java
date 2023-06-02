@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
  * @author HEX9CF
  * @date 2023/06/02
  */
-public class RandomWordHandler implements ActionListener {
+public class RandomWordHandler extends Handler{
     RandomWordView view;
     QueryRandomWord queryRandomWord;
 
@@ -26,10 +26,10 @@ public class RandomWordHandler implements ActionListener {
 
             // 随机获取单词
             queryRandomWord = new QueryRandomWord();
-            result = queryRandomWord.queryRandomWord();
+            result = queryRandomWord.query();
             // 减少重复
             if(lastWord.equals(result.getWord())) {
-                result = queryRandomWord.queryRandomWord();
+                result = queryRandomWord.query();
             }
 
             // 返回查询结果

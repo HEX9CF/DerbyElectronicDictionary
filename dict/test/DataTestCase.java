@@ -27,21 +27,21 @@ public class DataTestCase {
             word.setIpa(a[i][1]);
             word.setMeaning(a[i][2]);
             word.setExample(a[i][3]);
-            addWord.addWord(word);
+            addWord.add(word);
 //            System.out.printf("%-10s %-10s %-10s %-10s\n", word.getWord(), word.getIpa(), word.getMeaning(), word.getExample());
         }
 
         QueryWord queryWord = new QueryWord();
         word = new Word();
         word.setWord("empathy");
-        Word result = queryWord.queryWord(word);
+        Word result = queryWord.query(word);
         System.out.printf("%-10s %-10s %-10s %-10s\n", result.getWord(), result.getIpa(), result.getMeaning(), result.getExample());
         System.out.println();
 
         Word[] results;
 
         QueryAllWord queryAllWord = new QueryAllWord();
-        results = queryAllWord.queryAllWord();
+        results = queryAllWord.query();
         for(int i = 0; i < results.length; i++) {
             System.out.printf("%d %-10s %-10s %-10s %-10s\n", i, results[i].getWord(), results[i].getIpa(), results[i].getMeaning(), results[i].getExample());
         }
@@ -49,7 +49,7 @@ public class DataTestCase {
 
         QueryRandomWords queryRandomWords = new QueryRandomWords();
         queryRandomWords.setCount(3);
-        results = queryRandomWords.queryRandomWords();
+        results = queryRandomWords.query();
         for(int i = 0; i < results.length; i++) {
             System.out.printf("%d %-10s %-10s %-10s %-10s\n", i, results[i].getWord(), results[i].getIpa(), results[i].getMeaning(), results[i].getExample());
         }
@@ -59,10 +59,10 @@ public class DataTestCase {
         word = new Word();
         word.setWord("crawl");
         word.setIpa("/krɔːl/");
-        updateWord.updateWord(word);
+        updateWord.update(word);
 
         queryAllWord = new QueryAllWord();
-        results = queryAllWord.queryAllWord();
+        results = queryAllWord.query();
         for(int i = 0; i < results.length; i++) {
             System.out.printf("%d %-10s %-10s %-10s %-10s\n", i, results[i].getWord(), results[i].getIpa(), results[i].getMeaning(), results[i].getExample());
         }
@@ -71,10 +71,10 @@ public class DataTestCase {
         DeleteWord deleteWord = new DeleteWord();
         word = new Word();
         word.setWord("crawl");
-        deleteWord.deleteWord(word);
+        deleteWord.delete(word);
 
         queryAllWord = new QueryAllWord();
-        results = queryAllWord.queryAllWord();
+        results = queryAllWord.query();
         for(int i = 0; i < results.length; i++) {
             System.out.printf("%d %-10s %-10s %-10s %-10s\n", i, results[i].getWord(), results[i].getIpa(), results[i].getMeaning(), results[i].getExample());
         }

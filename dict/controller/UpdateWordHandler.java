@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
  * @author HEX9CF
  * @date 2023/06/02
  */
-public class UpdateWordHandler implements ActionListener {
+public class UpdateWordHandler extends Handler{
     UpdateWordView view;
     QueryWord queryWord;
     UpdateWord updateWord;
@@ -52,7 +52,7 @@ public class UpdateWordHandler implements ActionListener {
         Word word = new Word();
         word.setWord(wordStr);
         queryWord = new QueryWord();
-        Word result = queryWord.queryWord(word);
+        Word result = queryWord.query(word);
         if(null == result) {
             JOptionPane.showMessageDialog(null, "未找到该单词", "警告", JOptionPane.WARNING_MESSAGE);
             return;
@@ -96,7 +96,7 @@ public class UpdateWordHandler implements ActionListener {
 
         // 更新数据库
         updateWord = new UpdateWord();
-        isOK = updateWord.updateWord(word);
+        isOK = updateWord.update(word);
         if(0 != isOK) {
             JOptionPane.showMessageDialog(null, "修改单词成功^_^", "提示", JOptionPane.INFORMATION_MESSAGE);
         } else {
@@ -136,7 +136,7 @@ public class UpdateWordHandler implements ActionListener {
         deleteWord = new DeleteWord();
         int isConfirm = JOptionPane.showConfirmDialog(null, "确定要删除此单词吗？单词删除后不可恢复！", "提示", JOptionPane.YES_NO_OPTION);
         if(JOptionPane.YES_OPTION == isConfirm) {
-            isOK = deleteWord.deleteWord(word);
+            isOK = deleteWord.delete(word);
             if(0 != isOK) {
                 JOptionPane.showMessageDialog(null, "删除单词成功^_^", "提示", JOptionPane.INFORMATION_MESSAGE);
                 clearOutput();

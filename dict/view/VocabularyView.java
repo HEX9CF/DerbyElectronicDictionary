@@ -10,7 +10,7 @@ import javax.swing.*;
  * @author HEX9CF
  * @date 2023/06/01
  */
-public class VocabularyView {
+public class VocabularyView extends View{
     private JTable tableVocab;
     private JPanel mainPanel;
     private JButton buttonQuery;

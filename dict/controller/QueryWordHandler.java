@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
  * @author HEX9CF
  * @date 2023/06/02
  */
-public class QueryWordHandler implements ActionListener {
+public class QueryWordHandler extends Handler{
     QueryWordView view;
     QueryWord queryWord;
     public void actionPerformed(ActionEvent ae) {
@@ -32,7 +32,7 @@ public class QueryWordHandler implements ActionListener {
         Word word = new Word();
         word.setWord(wordStr);
         queryWord = new QueryWord();
-        Word result = queryWord.queryWord(word);
+        Word result = queryWord.query(word);
         if(null == result) {
             JOptionPane.showMessageDialog(null, "未找到该单词", "警告", JOptionPane.WARNING_MESSAGE);
             return;

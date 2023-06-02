@@ -9,7 +9,7 @@ import javax.swing.*;
  * @author HEX9CF
  * @date 2023/06/01
  */
-public class AddWordView {
+public class AddWordView extends View{
     private JPanel mainPanel;
     private JTextField textWord;
     private JTextField textIpa;

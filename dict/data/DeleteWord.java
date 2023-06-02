@@ -11,7 +11,7 @@ import java.sql.*;
  */
 public class DeleteWord {
     int isOK = 0;
-    public int deleteWord(Word word) {
+    public int delete(Word word) {
         // 连接数据库
         Connection con = DatabaseConnector.connect();
         if(null == con) {

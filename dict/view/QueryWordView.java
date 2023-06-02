@@ -10,7 +10,7 @@ import javax.swing.*;
  * @author HEX9CF
  * @date 2023/06/01
  */
-public class QueryWordView {
+public class QueryWordView extends View{
     private JPanel mainPanel;
     private JButton buttonQuery;
     private JTextField textInput;

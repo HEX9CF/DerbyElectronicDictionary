@@ -11,7 +11,7 @@ import java.sql.*;
  */
 public class UpdateWord {
     int isOK = 0;
-    public int updateWord(Word word) {
+    public int update(Word word) {
         // 连接数据库
         Connection con = DatabaseConnector.connect();
         if(null == con) {
@@ -20,7 +20,7 @@ public class UpdateWord {
 
         // 获取原单词数据
         QueryWord queryWord = new QueryWord();
-        Word originalWord = queryWord.queryWord(word);
+        Word originalWord = queryWord.query(word);
         if(null == word.getIpa()) {
             word.setIpa(originalWord.getIpa());
         }

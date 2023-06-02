@@ -10,7 +10,7 @@ import javax.swing.*;
  * @author HEX9CF
  * @date 2023/06/02
  */
-public class RandomWordView {
+public class RandomWordView extends View{
     private JPanel mainPanel;
     private JTextField textGuess;
     private JTextArea textExample;

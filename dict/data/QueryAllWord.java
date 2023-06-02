@@ -10,7 +10,7 @@ import java.sql.*;
  * @date 2023/06/02
  */
 public class QueryAllWord {
-    public Word[] queryAllWord() {
+    public Word[] query() {
         // 连接数据库
         Connection con = DatabaseConnector.connect();
         if(null == con) {

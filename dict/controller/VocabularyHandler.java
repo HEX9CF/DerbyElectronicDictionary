@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
  * @author HEX9CF
  * @date 2023/06/01
  */
-public class VocabularyHandler implements ActionListener {
+public class VocabularyHandler extends Handler{
     VocabularyView view;
     QueryAllWord queryAllWord;
     Word[] words;
@@ -35,7 +35,7 @@ public class VocabularyHandler implements ActionListener {
      */
     public void queryWord() {
         queryAllWord = new QueryAllWord();
-        words = queryAllWord.queryAllWord();
+        words = queryAllWord.query();
         row = words.length;
         tbl = new Object[row][COLUMN];
         for(int i = 0; i < row; i++) {

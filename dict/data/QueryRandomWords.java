@@ -15,7 +15,7 @@ public class QueryRandomWords {
     public void setCount(int n) {
         this.count = n;
     }
-    public Word[] queryRandomWords() {
+    public Word[] query() {
         // 连接数据库
         Connection con = DatabaseConnector.connect();
         if(null == con) {

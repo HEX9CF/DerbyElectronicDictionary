@@ -11,7 +11,7 @@ import java.sql.*;
  */
 public class AddWord {
     int isOK = 0;
-    public int addWord(Word word) {
+    public int add(Word word) {
         // 连接数据库
         Connection con = DatabaseConnector.connect();
         if(null == con) {
