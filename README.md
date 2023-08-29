@@ -1,6 +1,8 @@
-# DerbyElectronicDictionary
+# Derby Electronic Dictionary
 
 #### 介绍
+An electronic English Chinese dictionary based on the Apache Derby embedded database, with a GUI developed using the Java Swing framework.
+
 基于Apache Derby嵌入式数据库的电子英汉词典，GUI基于Java Swing框架开发。
 
 #### 软件功能
@@ -10,11 +12,3 @@
 4. 添加单词：将一个新的单词及其音标、释义、例句写入数据库。
 5. 修改单词：修改数据库中某个已存在的单词。修改前需要先读取该单词。
 6. 删除单词：删除数据库中某个单词。删除单词前将弹出确认对话框，以防止误操作。
- 
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
